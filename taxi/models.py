@@ -25,7 +25,8 @@ class Car(models.Model):
         related_name='cars'
     )
     model = models.CharField(max_length=100)
-    drivers = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='cars')
+    drivers = models.ManyToManyField(settings.AUTH_USER_MODEL,
+                                     related_name='cars')
 
     def __str__(self):
         return f"{self.model} - {self.manufacturer.name}"
